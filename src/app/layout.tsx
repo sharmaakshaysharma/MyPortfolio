@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { PORTFOLIO_CONFIG } from "@/data/portfolio";
+import { CustomCursor } from "@/components/CustomCursor";
 
 export const metadata: Metadata = {
   title: `${PORTFOLIO_CONFIG.personal.name} | ${PORTFOLIO_CONFIG.personal.title}`,
@@ -105,6 +106,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-[#030508] text-[#f8fafc] antialiased min-h-screen selection:bg-cyan-500/30 selection:text-white">
+        <CustomCursor />
         {children}
       </body>
     </html>

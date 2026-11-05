@@ -50,6 +50,20 @@ body {
   position: relative;
 }
 
+/* Futuristic Apple VisionOS Liquid Glass Cursor */
+@media (pointer: fine) {
+  body, 
+  a, 
+  button, 
+  [role="button"], 
+  input, 
+  textarea, 
+  select,
+  .cursor-pointer {
+    cursor: none !important;
+  }
+}
+
 ::selection {
   background: rgba(0, 240, 255, 0.3);
   color: #ffffff;
