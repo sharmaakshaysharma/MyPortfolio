@@ -63,10 +63,10 @@ export function TechnicalExpertise() {
           </p>
         </div>
 
-        {/* Filter Controls Bar (HUD console style) */}
+        {/* Filter Controls Bar (Apple Frosted Glass Style) */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           {/* Category Tabs */}
-          <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-[#070c16] border border-cyan-500/20 shadow-inner">
+          <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-full bg-white/[0.04] border border-white/[0.12] backdrop-blur-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.18)]">
             {categories.map((cat) => {
               const Icon = cat.icon;
               const isActive = activeCategory === cat.id;
@@ -74,13 +74,13 @@ export function TechnicalExpertise() {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-mono transition-all cursor-pointer ${
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono transition-all cursor-pointer ${
                     isActive
-                      ? "bg-cyan-500/25 text-cyan-200 border border-cyan-400 shadow-[0_0_15px_rgba(0,240,255,0.3)] font-semibold"
-                      : "text-slate-400 hover:text-slate-200 hover:bg-white/[0.04]"
+                      ? "bg-white/[0.16] text-white border border-white/[0.3] shadow-[0_4px_15px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.4)] font-bold"
+                      : "text-slate-400 hover:text-white hover:bg-white/[0.08]"
                   }`}
                 >
-                  <Icon className="w-3.5 h-3.5" />
+                  <Icon className="w-3.5 h-3.5 text-cyan-400" />
                   <span>{cat.name}</span>
                 </button>
               );
@@ -89,18 +89,18 @@ export function TechnicalExpertise() {
 
           {/* Search Input */}
           <div className="relative min-w-[260px]">
-            <Search className="w-4 h-4 text-cyan-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-cyan-400 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Query tech matrix..."
-              className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-[#070c16] border border-cyan-500/20 focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(0,240,255,0.25)] focus:outline-none text-xs text-white placeholder-slate-500 font-mono transition-all"
+              className="w-full pl-10 pr-4 py-2.5 rounded-full bg-white/[0.04] border border-white/[0.14] focus:border-cyan-400 focus:shadow-[0_0_20px_rgba(0,240,255,0.3),inset_0_1px_1px_rgba(255,255,255,0.25)] focus:outline-none text-xs text-white placeholder-slate-400 font-mono backdrop-blur-xl transition-all"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-slate-500 hover:text-cyan-400 font-mono"
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[10px] text-slate-400 hover:text-cyan-400 font-mono"
               >
                 CLEAR
               </button>
@@ -108,32 +108,32 @@ export function TechnicalExpertise() {
           </div>
         </div>
 
-        {/* Skills Grid */}
+        {/* Skills Grid (Apple Squircle Frosted Glass Cards) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredSkills.map((skill) => (
             <div
               key={`${skill.categoryId}-${skill.name}`}
-              className="p-5 rounded-2xl bg-gradient-to-b from-[#090f1a] to-[#05080e] border border-cyan-500/15 hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(0,240,255,0.18)] transition-all duration-300 flex flex-col justify-between group hud-corner"
+              className="p-6 rounded-3xl bg-white/[0.05] hover:bg-white/[0.09] border border-white/[0.14] hover:border-white/[0.28] backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-cyan-400 group-hover:bg-emerald-400 group-hover:shadow-[0_0_8px_#00ff9d] transition-all" />
+                  <div className="flex items-center gap-2.5">
+                    <span className="w-2 h-2 rounded-full bg-cyan-400 group-hover:bg-emerald-400 group-hover:shadow-[0_0_10px_#00ff9d] transition-all" />
                     <h3 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors font-mono">
                       {skill.name}
                     </h3>
                   </div>
-                  <span className="text-[9px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-300">
+                  <span className="text-[9px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-white/[0.08] border border-white/[0.14] text-cyan-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
                     {skill.categoryName.split(" ")[0]}
                   </span>
                 </div>
 
-                <p className="text-xs text-slate-400 leading-relaxed mt-2">
+                <p className="text-xs text-slate-300 leading-relaxed mt-2">
                   {skill.experienceNotes}
                 </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-white/[0.05] flex items-center justify-between text-[10px] font-mono text-slate-500">
+              <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[10px] font-mono text-slate-400">
                 <span className="flex items-center gap-1 text-emerald-400 font-semibold">
                   <CheckCircle2 className="w-3 h-3 text-emerald-400" />
                   PROD // VALIDATED

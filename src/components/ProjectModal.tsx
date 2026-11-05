@@ -44,29 +44,29 @@ export function ProjectModal({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
       <div
-        className="relative w-full max-w-4xl max-h-[90vh] bg-[#0d1017] border border-white/[0.12] rounded-3xl shadow-2xl flex flex-col overflow-hidden"
+        className="relative w-full max-w-4xl max-h-[90vh] bg-slate-950/85 border border-white/[0.22] backdrop-blur-3xl rounded-[32px] sm:rounded-[40px] shadow-[0_30px_100px_rgba(0,0,0,0.95),inset_0_1.5px_2px_rgba(255,255,255,0.4)] flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="flex items-start justify-between p-6 sm:p-8 border-b border-white/[0.08] bg-[#0f131c]">
+        <div className="flex items-start justify-between p-6 sm:p-8 border-b border-white/[0.1] bg-white/[0.03]">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-[11px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400">
+              <span className="text-[11px] font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 font-semibold shadow-sm">
                 {project.category}
               </span>
-              <span className="text-xs font-mono text-slate-500">Case Study</span>
+              <span className="text-xs font-mono text-slate-400">Case Study</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
               {project.title}
             </h2>
-            <p className="text-sm text-slate-400 mt-1 max-w-2xl leading-relaxed">
+            <p className="text-sm text-slate-300 mt-1 max-w-2xl leading-relaxed">
               {project.tagline}
             </p>
           </div>
 
           <button
             onClick={onClose}
-            className="p-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-slate-400 hover:text-white transition-colors cursor-pointer"
+            className="p-2.5 rounded-full bg-white/[0.08] hover:bg-white/[0.18] border border-white/[0.2] text-slate-300 hover:text-white transition-all cursor-pointer shadow-sm active:scale-95"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />

@@ -49,10 +49,10 @@ export function Navbar({
     <header className="fixed top-8 left-0 right-0 z-40 transition-all duration-300 py-2 sm:py-3 px-3 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div
-          className={`flex items-center justify-between px-4 sm:px-6 py-2.5 rounded-2xl transition-all duration-300 ${
+          className={`flex items-center justify-between px-4 sm:px-6 py-2.5 rounded-full transition-all duration-300 ${
             scrolled
-              ? "bg-[#05080e]/90 backdrop-blur-2xl border border-cyan-500/25 shadow-[0_10px_35px_-5px_rgba(0,240,255,0.15)]"
-              : "bg-[#070b14]/70 backdrop-blur-xl border border-white/[0.08]"
+              ? "bg-white/[0.08] backdrop-blur-3xl border border-white/[0.22] shadow-[0_20px_50px_rgba(0,0,0,0.85),inset_0_1.2px_1.5px_rgba(255,255,255,0.4)]"
+              : "bg-white/[0.05] backdrop-blur-2xl border border-white/[0.14] shadow-[0_12px_35px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25)]"
           }`}
         >
           {/* Logo / Holographic Monogram */}
@@ -85,13 +85,13 @@ export function Navbar({
             </div>
           </a>
 
-          {/* Desktop Nav Links (HUD Capsule) */}
-          <nav className="hidden md:flex items-center gap-1 bg-[#090e18]/80 border border-white/[0.08] rounded-xl px-3 py-1 backdrop-blur-md shadow-inner">
+          {/* Desktop Nav Links (Apple Frosted Pill) */}
+          <nav className="hidden md:flex items-center gap-1 bg-white/[0.04] border border-white/[0.1] rounded-full px-3 py-1 backdrop-blur-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.18)]">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="px-3 py-1.5 text-xs font-mono text-slate-300 hover:text-cyan-300 hover:bg-cyan-500/10 rounded-lg transition-all"
+                className="px-3.5 py-1.5 text-xs font-mono text-slate-300 hover:text-white hover:bg-white/[0.1] rounded-full transition-all"
               >
                 {link.name}
               </a>
@@ -104,7 +104,7 @@ export function Navbar({
             {onOpenTerminal && (
               <button
                 onClick={onOpenTerminal}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-xs font-mono text-cyan-300 transition-all cursor-pointer shadow-sm hover:shadow-[0_0_15px_rgba(0,240,255,0.25)]"
+                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-400/30 text-xs font-mono text-cyan-300 transition-all cursor-pointer shadow-[0_4px_15px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_20px_rgba(0,240,255,0.35)]"
                 title="Launch Terminal Console (Ctrl + K)"
               >
                 <Terminal className="w-3.5 h-3.5 text-cyan-400" />
@@ -115,7 +115,7 @@ export function Navbar({
             {/* Resume Preview/Download */}
             <button
               onClick={onOpenResume || (() => window.open("/api/resume", "_blank"))}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/[0.04] hover:bg-emerald-500/15 border border-white/[0.1] hover:border-emerald-500/40 text-xs font-mono text-slate-300 hover:text-emerald-300 transition-all cursor-pointer shadow-sm hover:shadow-[0_0_15px_rgba(0,255,157,0.2)]"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/[0.06] hover:bg-white/[0.15] border border-white/[0.16] text-xs font-mono text-slate-200 hover:text-white transition-all cursor-pointer shadow-[0_4px_15px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.3)]"
               title="Preview / Download Resume"
             >
               <Download className="w-3.5 h-3.5 text-emerald-400" />
@@ -125,20 +125,20 @@ export function Navbar({
             {/* Command Palette Trigger */}
             <button
               onClick={onOpenCommandPalette}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#090e18] hover:bg-cyan-500/15 border border-cyan-500/20 hover:border-cyan-500/50 text-xs font-mono text-slate-400 hover:text-cyan-300 transition-all cursor-pointer shadow-sm hover:shadow-[0_0_15px_rgba(0,240,255,0.2)]"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.12] border border-white/[0.14] text-xs font-mono text-slate-300 hover:text-white transition-all cursor-pointer shadow-[0_4px_15px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.25)]"
               title="Open Command Palette (⌘K)"
             >
               <Search className="w-3.5 h-3.5 text-cyan-400" />
               <span>Search</span>
-              <kbd className="text-[10px] bg-white/[0.08] px-1.5 py-0.5 rounded text-slate-400">
+              <kbd className="text-[10px] bg-white/[0.1] px-1.5 py-0.5 rounded-full text-slate-300 border border-white/[0.15]">
                 ⌘K
               </kbd>
             </button>
 
-            {/* Direct Connect CTA (Futuristic Neon Button) */}
+            {/* Direct Connect CTA (Apple Glow Pill) */}
             <a
               href="#contact"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 via-emerald-400 to-cyan-500 hover:from-cyan-400 hover:to-emerald-300 text-slate-950 text-xs font-mono font-bold tracking-wider uppercase transition-all duration-300 shadow-[0_0_20px_rgba(0,240,255,0.4)] hover:shadow-[0_0_30px_rgba(0,240,255,0.6)] active:scale-95"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-400 via-emerald-400 to-cyan-400 hover:from-cyan-300 hover:to-emerald-300 text-slate-950 text-xs font-mono font-bold tracking-wider uppercase transition-all duration-300 shadow-[0_0_25px_rgba(0,240,255,0.5),inset_0_1px_1px_rgba(255,255,255,0.6)] hover:shadow-[0_0_35px_rgba(0,240,255,0.7)] active:scale-95"
             >
               <span>Connect</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

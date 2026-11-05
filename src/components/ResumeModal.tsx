@@ -109,13 +109,13 @@ Software Developer focused on backend engineering, data pipelines, cloud technol
         className="absolute inset-0 bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
       />
 
-      {/* Modal Card */}
-      <div className="relative w-full max-w-4xl max-h-[90vh] flex flex-col rounded-3xl bg-[#070b14] border border-cyan-500/30 shadow-[0_25px_80px_rgba(0,0,0,0.9),0_0_40px_rgba(0,240,255,0.15)] overflow-hidden z-10 animate-in zoom-in-95 duration-200">
+      {/* Modal Card (Apple VisionOS Liquid Frosted Glass Sheet) */}
+      <div className="relative w-full max-w-4xl max-h-[90vh] flex flex-col rounded-[32px] sm:rounded-[40px] bg-slate-950/80 border border-white/[0.22] backdrop-blur-3xl shadow-[0_30px_100px_rgba(0,0,0,0.95),inset_0_1.5px_2px_rgba(255,255,255,0.4)] overflow-hidden z-10 animate-in zoom-in-95 duration-200">
         
         {/* Top Header Bar */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.08] bg-white/[0.02]">
+        <div className="flex items-center justify-between px-6 sm:px-8 py-5 border-b border-white/[0.1] bg-white/[0.03]">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-300">
+            <div className="p-2.5 rounded-2xl bg-white/[0.08] border border-white/[0.18] text-cyan-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)]">
               <FileText className="w-5 h-5" />
             </div>
             <div>
@@ -123,11 +123,11 @@ Software Developer focused on backend engineering, data pipelines, cloud technol
                 <h3 className="text-base font-bold text-white tracking-wide">
                   Akshay Sharma — Curriculum Vitae
                 </h3>
-                <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-semibold shadow-sm">
                   VERIFIED
                 </span>
               </div>
-              <p className="text-xs font-mono text-slate-400">
+              <p className="text-xs font-mono text-slate-300">
                 Software Developer &bull; Data Engineer &bull; AI Enthusiast
               </p>
             </div>

@@ -82,7 +82,7 @@ export function FeaturedProjects({
             return (
               <div
                 key={project.id}
-                className={`group relative rounded-3xl bg-gradient-to-b from-[#090f1a] to-[#04060c] border ${style.border} transition-all duration-300 p-6 sm:p-8 lg:p-10 shadow-2xl overflow-hidden hud-corner`}
+                className="group relative rounded-[32px] sm:rounded-[38px] bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-white/[0.015] border border-white/[0.18] hover:border-white/[0.32] backdrop-blur-3xl p-6 sm:p-8 lg:p-10 shadow-[0_30px_70px_rgba(0,0,0,0.85),inset_0_1.5px_2px_rgba(255,255,255,0.4)] transition-all duration-300 overflow-hidden"
               >
                 <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                   {/* Left Column: Metadata & Narrative */}
@@ -157,18 +157,18 @@ export function FeaturedProjects({
 
                   {/* Right Column: Key Architectural Metrics & Tech Matrix */}
                   <div className="lg:col-span-5 flex flex-col gap-4">
-                    {/* Metrics Panel */}
-                    <div className="p-5 rounded-2xl bg-black/60 border border-cyan-500/20 backdrop-blur-md shadow-inner">
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-cyan-400 block mb-3 font-semibold">
+                    {/* Metrics Panel (Apple Frosted Glass) */}
+                    <div className="p-5 rounded-2xl bg-white/[0.04] border border-white/[0.12] backdrop-blur-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-cyan-300 block mb-3 font-semibold">
                         System Specifications // TELEMETRY
                       </span>
                       <div className="grid grid-cols-2 gap-3">
                         {project.metrics.map((m) => (
                           <div
                             key={m.label}
-                            className="p-3 rounded-xl bg-[#080d17]/80 border border-white/[0.06]"
+                            className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.08]"
                           >
-                            <span className="text-[10px] font-mono text-slate-500 block">
+                            <span className="text-[10px] font-mono text-slate-400 block">
                               {m.label}
                             </span>
                             <span className="text-xs font-mono font-bold text-white mt-0.5 block truncate">
@@ -180,15 +180,15 @@ export function FeaturedProjects({
                     </div>
 
                     {/* Tech Stack Pills */}
-                    <div className="p-5 rounded-2xl bg-black/40 border border-white/[0.08]">
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-2.5">
+                    <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.1] backdrop-blur-md">
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-slate-300 block mb-2.5">
                         Implemented Technologies
                       </span>
                       <div className="flex flex-wrap gap-1.5">
                         {project.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="text-xs font-mono px-2.5 py-1 rounded-lg bg-white/[0.04] border border-cyan-500/20 text-slate-300 hover:border-cyan-400 hover:text-cyan-300 transition-colors"
+                            className="text-xs font-mono px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.14] text-slate-200 hover:border-cyan-400 hover:text-white transition-colors shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]"
                           >
                             {tech}
                           </span>

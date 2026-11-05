@@ -59,20 +59,20 @@ export function Footer() {
 
           {/* Real-time Status & Clock */}
           <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
-            <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#070c16] border border-emerald-500/30 text-emerald-300 shadow-[0_0_12px_rgba(0,255,157,0.2)]">
+            <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-emerald-500/30 text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
               <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-cyber-pulse" />
               <span>ALL SYSTEMS OPERATIONAL</span>
             </div>
 
             {currentTime && (
-              <div className="text-cyan-400 px-3.5 py-1.5 rounded-full bg-[#070c16] border border-cyan-500/20">
+              <div className="text-cyan-300 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.15] shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]">
                 LOC // {currentTime}
               </div>
             )}
 
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white/[0.04] hover:bg-cyan-500/15 text-slate-300 hover:text-cyan-300 border border-cyan-500/30 transition-all cursor-pointer shadow-sm hover:shadow-[0_0_15px_rgba(0,240,255,0.2)]"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/[0.06] hover:bg-white/[0.14] text-slate-300 hover:text-white border border-white/[0.18] transition-all cursor-pointer shadow-sm active:scale-95"
               title="Return to top"
             >
               <span>Back to Top</span>

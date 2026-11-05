@@ -55,8 +55,8 @@ export function ArchitectureShowcase({
           </p>
         </div>
 
-        {/* Diagram Switcher Tabs */}
-        <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-[#070c16] border border-cyan-500/20 mb-8 shadow-inner">
+        {/* Diagram Switcher Tabs (Apple Frosted Glass Pills) */}
+        <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-full bg-white/[0.04] border border-white/[0.12] backdrop-blur-xl mb-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.18)]">
           {PORTFOLIO_CONFIG.architectureDiagrams.map((diag) => {
             const isSelected = diag.id === activeDiagram.id;
             return (
@@ -66,10 +66,10 @@ export function ArchitectureShowcase({
                   setSelectedDiagramId(diag.id);
                   setActiveStepIndex(0);
                 }}
-                className={`px-4 py-2 rounded-xl text-xs font-mono font-medium transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-full text-xs font-mono font-medium transition-all cursor-pointer ${
                   isSelected
-                    ? "bg-cyan-500/25 text-cyan-200 border border-cyan-400 shadow-[0_0_15px_rgba(0,240,255,0.3)] font-semibold"
-                    : "text-slate-400 hover:text-slate-200 hover:bg-white/[0.04]"
+                    ? "bg-white/[0.16] text-white border border-white/[0.3] shadow-[0_4px_15px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.4)] font-bold"
+                    : "text-slate-400 hover:text-white hover:bg-white/[0.08]"
                 }`}
               >
                 {diag.title}
@@ -78,8 +78,8 @@ export function ArchitectureShowcase({
           })}
         </div>
 
-        {/* Interactive Architecture Console Box (Futuristic HUD) */}
-        <div className="rounded-3xl bg-gradient-to-b from-[#090f1a] to-[#04060c] border border-cyan-500/30 shadow-[0_0_40px_rgba(0,240,255,0.12)] p-6 sm:p-8 lg:p-10 hud-corner">
+        {/* Interactive Architecture Console Box (Apple VisionOS Glass Sheet) */}
+        <div className="rounded-[32px] sm:rounded-[40px] bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-white/[0.015] border border-white/[0.18] backdrop-blur-3xl shadow-[0_30px_80px_rgba(0,0,0,0.85),inset_0_1.5px_2px_rgba(255,255,255,0.4)] p-6 sm:p-8 lg:p-10">
           {/* Active Diagram Metadata */}
           <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-8 border-b border-cyan-500/20 gap-4">
             <div>

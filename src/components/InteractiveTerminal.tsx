@@ -294,37 +294,37 @@ export function InteractiveTerminal({
         className="absolute inset-0 bg-black/85 backdrop-blur-md animate-in fade-in duration-150"
       />
 
-      {/* Terminal Window */}
+      {/* Terminal Window (Apple macOS Frosted Glass) */}
       <div
-        className={`relative flex flex-col rounded-2xl bg-[#03060c] border border-cyan-500/30 shadow-[0_30px_90px_rgba(0,0,0,0.95),0_0_50px_rgba(0,240,255,0.18)] overflow-hidden z-10 transition-all duration-200 ${
+        className={`relative flex flex-col rounded-[28px] bg-slate-950/85 border border-white/[0.2] backdrop-blur-3xl shadow-[0_30px_90px_rgba(0,0,0,0.95),inset_0_1.5px_2px_rgba(255,255,255,0.35)] overflow-hidden z-10 transition-all duration-200 ${
           isMaximized
             ? "w-full h-full max-w-full max-h-full rounded-none"
             : "w-full max-w-3xl h-[650px] max-h-[90vh]"
         }`}
       >
         {/* Terminal Header Bar */}
-        <div className="flex items-center justify-between px-4 py-3 bg-[#070e1b] border-b border-cyan-500/20 select-none">
+        <div className="flex items-center justify-between px-5 py-3.5 bg-white/[0.04] border-b border-white/[0.1] select-none">
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2">
               <button
                 onClick={onClose}
-                className="w-3 h-3 rounded-full bg-red-500/80 hover:bg-red-400 transition-colors"
+                className="w-3 h-3 rounded-full bg-[#ff5f56] hover:brightness-110 transition-all shadow-[0_0_6px_rgba(255,95,86,0.6)] cursor-pointer"
                 title="Close"
               />
               <button
                 onClick={() => setIsMaximized(!isMaximized)}
-                className="w-3 h-3 rounded-full bg-yellow-500/80 hover:bg-yellow-400 transition-colors"
+                className="w-3 h-3 rounded-full bg-[#ffbd2e] hover:brightness-110 transition-all shadow-[0_0_6px_rgba(255,189,46,0.6)] cursor-pointer"
                 title="Maximize/Restore"
               />
               <button
                 onClick={() => setHistory([])}
-                className="w-3 h-3 rounded-full bg-emerald-500/80 hover:bg-emerald-400 transition-colors"
+                className="w-3 h-3 rounded-full bg-[#27c93f] hover:brightness-110 transition-all shadow-[0_0_6px_rgba(39,201,63,0.6)] cursor-pointer"
                 title="Clear screen"
               />
             </div>
-            <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
+            <div className="flex items-center gap-2 text-xs font-mono text-slate-300">
               <Terminal className="w-3.5 h-3.5 text-cyan-400" />
-              <span>akshay@edge-cluster:~ (bash)</span>
+              <span>akshay@edge-cluster:~ (zsh)</span>
             </div>
           </div>
 

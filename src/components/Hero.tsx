@@ -92,11 +92,11 @@ export function Hero({
 
       {/* Main Container with Cinematic Frame */}
       <div className="relative max-w-7xl w-full mx-auto">
-        {/* Floating Cockpit Frame */}
-        <div className="relative rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/[0.14] backdrop-blur-2xl shadow-[0_30px_90px_rgba(0,0,0,0.9)] p-6 sm:p-10 lg:p-12 overflow-hidden">
+        {/* Floating Cockpit Frame (Apple VisionOS / iOS Liquid Glass Sheet) */}
+        <div className="relative rounded-[32px] sm:rounded-[44px] bg-gradient-to-b from-white/[0.1] via-white/[0.04] to-white/[0.015] border border-white/[0.22] backdrop-blur-3xl shadow-[0_35px_100px_rgba(0,0,0,0.9),inset_0_1.5px_2px_rgba(255,255,255,0.45)] p-6 sm:p-10 lg:p-12 overflow-hidden">
           
           {/* Atmospheric Storm Landscape Horizon & Lightning Effect (Reference Aesthetic) */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl sm:rounded-[2.5rem]">
+          <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-[32px] sm:rounded-[44px]">
             {/* Dark dramatic cloud gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#0c1828]/60 via-[#070d17]/40 to-[#020408]/90 z-0" />
             
@@ -207,8 +207,8 @@ export function Hero({
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-            {/* Left 1 Column: Floating Vertical Tool Dock (Inspired by Reference UI) */}
-            <div className="hidden xl:flex lg:col-span-1 flex-col items-center justify-between py-4 px-2 rounded-2xl bg-white/[0.04] border border-white/[0.1] backdrop-blur-2xl shadow-xl min-h-[420px]">
+            {/* Left 1 Column: Floating Vertical Tool Dock (Apple macOS/iOS Glass Dock) */}
+            <div className="hidden xl:flex lg:col-span-1 flex-col items-center justify-between py-5 px-2.5 rounded-3xl bg-white/[0.07] border border-white/[0.2] backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.7),inset_0_1px_1.5px_rgba(255,255,255,0.35)] min-h-[440px]">
               {/* Top Icons */}
               <div className="flex flex-col items-center gap-2.5 w-full">
                 {/* Active Grid Icon with Left Glowing Indicator Pill */}
@@ -390,44 +390,44 @@ export function Hero({
 
             {/* Right Column: Floating Frosted Glass Telemetry Card (Directly inspired by reference UI) */}
             <div className="lg:col-span-5 flex flex-col gap-4">
-              {/* Frosted Telemetry Card (Glassmorphic Widget) */}
-              <div className="relative rounded-3xl bg-white/[0.05] border border-white/[0.15] backdrop-blur-3xl shadow-[0_25px_60px_-10px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.2)] p-6 overflow-hidden">
+              {/* Frosted Telemetry Card (Apple iOS Glassmorphic Widget) */}
+              <div className="relative rounded-[28px] bg-white/[0.08] border border-white/[0.22] backdrop-blur-3xl shadow-[0_30px_70px_-10px_rgba(0,0,0,0.85),inset_0_1.5px_2px_rgba(255,255,255,0.45)] p-6 sm:p-7 overflow-hidden">
                 {/* Location / Telemetry Pin Header */}
-                <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/[0.08]">
+                <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/[0.12]">
                   <div className="flex items-center gap-2 text-xs font-mono text-cyan-300">
                     <span className="w-2 h-2 rounded-full bg-cyan-400 animate-cyber-pulse" />
                     <span>AWS CLOUD // S3 DATA LAKE</span>
                   </div>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                  <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)]">
                     KMS SECURED
                   </span>
                 </div>
 
                 {/* Big Bold Live Metrics (Matching the large "10° C" style in reference image) */}
                 <div className="mb-6">
-                  <span className="text-[10px] font-mono uppercase text-slate-400 tracking-wider block mb-1">
+                  <span className="text-[10px] font-mono uppercase text-slate-300 tracking-wider block mb-1">
                     TOTAL PROCESSED TRANSACTIONS
                   </span>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl sm:text-5xl font-black font-mono text-white tracking-tight">
+                    <span className="text-4xl sm:text-5xl font-black font-mono text-white tracking-tight drop-shadow-md">
                       <AnimatedCounter value={batchCount} />
                     </span>
-                    <span className="text-xs font-mono text-emerald-400 font-semibold">
+                    <span className="text-xs font-mono text-emerald-400 font-bold">
                       RECS
                     </span>
                   </div>
-                  <p className="text-xs text-slate-400 mt-1 font-mono">
+                  <p className="text-xs text-slate-300 mt-1 font-mono">
                     CDF Latency // <span className="text-cyan-300 font-semibold">32ms p99</span> &bull; Athena Sync Ready
                   </p>
                 </div>
 
-                {/* Pipeline Flow Stages */}
-                <div className="space-y-2 mb-5 font-mono text-xs">
+                {/* Pipeline Flow Stages (iOS Frosted Glass Pills) */}
+                <div className="space-y-2.5 mb-5 font-mono text-xs">
                   <div
                     className={`p-3 rounded-2xl border transition-all duration-300 flex items-center justify-between ${
                       activeStage === 1
-                        ? "bg-cyan-500/20 border-cyan-400 text-white shadow-[0_0_15px_rgba(0,240,255,0.3)]"
-                        : "bg-black/40 border-white/[0.06] text-slate-300"
+                        ? "bg-cyan-500/25 border-cyan-400 text-white shadow-[0_0_20px_rgba(0,240,255,0.35),inset_0_1px_1px_rgba(255,255,255,0.4)]"
+                        : "bg-white/[0.04] hover:bg-white/[0.08] border-white/[0.12] text-slate-200 shadow-[inset_0_1px_1px_rgba(255,255,255,0.18)]"
                     }`}
                   >
                     <div className="flex items-center gap-2.5">
@@ -446,8 +446,8 @@ export function Hero({
                   <div
                     className={`p-3 rounded-2xl border transition-all duration-300 flex items-center justify-between ${
                       activeStage === 2
-                        ? "bg-emerald-500/20 border-emerald-400 text-white shadow-[0_0_15px_rgba(0,255,157,0.3)]"
-                        : "bg-black/40 border-white/[0.06] text-slate-300"
+                        ? "bg-emerald-500/25 border-emerald-400 text-white shadow-[0_0_20px_rgba(0,255,157,0.35),inset_0_1px_1px_rgba(255,255,255,0.4)]"
+                        : "bg-white/[0.04] hover:bg-white/[0.08] border-white/[0.12] text-slate-200 shadow-[inset_0_1px_1px_rgba(255,255,255,0.18)]"
                     }`}
                   >
                     <div className="flex items-center gap-2.5">
@@ -466,8 +466,8 @@ export function Hero({
                   <div
                     className={`p-3 rounded-2xl border transition-all duration-300 flex items-center justify-between ${
                       activeStage === 3
-                        ? "bg-indigo-500/20 border-indigo-400 text-white shadow-[0_0_15px_rgba(99,102,241,0.3)]"
-                        : "bg-black/40 border-white/[0.06] text-slate-300"
+                        ? "bg-indigo-500/25 border-indigo-400 text-white shadow-[0_0_20px_rgba(99,102,241,0.35),inset_0_1px_1px_rgba(255,255,255,0.4)]"
+                        : "bg-white/[0.04] hover:bg-white/[0.08] border-white/[0.12] text-slate-200 shadow-[inset_0_1px_1px_rgba(255,255,255,0.18)]"
                     }`}
                   >
                     <div className="flex items-center gap-2.5">
@@ -484,8 +484,8 @@ export function Hero({
                   </div>
                 </div>
 
-                {/* Real-time Terminal Feedback Line */}
-                <div className="p-2.5 rounded-xl bg-black/60 border border-white/[0.08] text-[10px] font-mono text-cyan-200 mb-4 flex items-center gap-2">
+                {/* Real-time Terminal Feedback Line (Apple Glass Capsule) */}
+                <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.1] text-[10px] font-mono text-cyan-200 mb-4 flex items-center gap-2 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)] backdrop-blur-md">
                   <span className="text-cyan-400">&gt;</span>
                   <span className="truncate">{terminalOutput}</span>
                 </div>
@@ -494,10 +494,10 @@ export function Hero({
                 <button
                   onClick={simulateBatch}
                   disabled={pipelineActive}
-                  className={`w-full py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200 ${
+                  className={`w-full py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2 text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200 ${
                     pipelineActive
-                      ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400 cursor-not-allowed shadow-[0_0_15px_rgba(0,240,255,0.3)]"
-                      : "bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 hover:from-cyan-500 hover:to-emerald-400 hover:text-slate-950 text-cyan-300 border border-cyan-500/40 cursor-pointer active:scale-98 shadow-sm hover:shadow-[0_0_25px_rgba(0,240,255,0.4)]"
+                      ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400 cursor-not-allowed shadow-[0_0_20px_rgba(0,240,255,0.35)]"
+                      : "bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 text-slate-950 shadow-[0_0_25px_rgba(0,240,255,0.45),inset_0_1px_1px_rgba(255,255,255,0.6)] hover:shadow-[0_0_35px_rgba(0,240,255,0.65)] cursor-pointer active:scale-98"
                   }`}
                 >
                   {pipelineActive ? (

@@ -216,7 +216,7 @@ def index_embeddings_batch(records: list[dict], embeddings: list[list[float]]):
   };
 
   return (
-    <div className="relative rounded-3xl bg-gradient-to-b from-[#060a14] via-[#04070e] to-[#020408] border border-cyan-500/25 p-6 sm:p-8 lg:p-10 shadow-[0_25px_80px_rgba(0,0,0,0.9)] hud-corner overflow-hidden">
+    <div className="relative rounded-[32px] sm:rounded-[40px] bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-white/[0.015] border border-white/[0.18] backdrop-blur-3xl p-6 sm:p-8 lg:p-10 shadow-[0_30px_80px_rgba(0,0,0,0.85),inset_0_1.5px_2px_rgba(255,255,255,0.4)] overflow-hidden">
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-white/[0.08] relative z-10">
         <div>

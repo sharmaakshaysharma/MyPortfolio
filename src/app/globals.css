@@ -241,20 +241,88 @@ body {
     linear-gradient(180deg, #070d18 0%, #03060c 60%, #020306 100%);
 }
 
-.frosted-glass-card {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+/* =========================================================================
+   APPLE iOS / VisionOS LIQUID FROSTED GLASS SYSTEM
+   ========================================================================= */
+
+.ios-glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(36px) saturate(210%) contrast(105%);
+  -webkit-backdrop-filter: blur(36px) saturate(210%) contrast(105%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 
-    0 30px 60px -12px rgba(0, 0, 0, 0.8),
-    inset 0 1px 1px rgba(255, 255, 255, 0.25);
+    0 24px 60px -12px rgba(0, 0, 0, 0.85),
+    inset 0 1.2px 1.5px 0 rgba(255, 255, 255, 0.4),
+    inset 0 0 20px 0 rgba(255, 255, 255, 0.03);
+  border-radius: 1.75rem;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ios-glass-card:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 
+    0 30px 70px -10px rgba(0, 0, 0, 0.9),
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.55),
+    0 0 35px -5px rgba(0, 240, 255, 0.22);
+  transform: translateY(-2px);
+}
+
+.ios-glass-pill {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 
+    0 10px 30px -5px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.45);
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+}
+
+.ios-glass-pill:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.08) 100%);
+  border-color: rgba(255, 255, 255, 0.38);
+  box-shadow: 
+    0 14px 35px -5px rgba(0, 0, 0, 0.7),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.6);
+}
+
+.ios-glass-interactive {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ios-glass-interactive:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45);
+  transform: translateY(-1.5px);
+}
+
+.frosted-glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(36px) saturate(210%) contrast(105%);
+  -webkit-backdrop-filter: blur(36px) saturate(210%) contrast(105%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    0 30px 60px -12px rgba(0, 0, 0, 0.85),
+    inset 0 1.2px 1.5px 0 rgba(255, 255, 255, 0.42),
+    inset 0 0 20px 0 rgba(255, 255, 255, 0.03);
 }
 
 .frosted-glass-pill {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.45);
 }

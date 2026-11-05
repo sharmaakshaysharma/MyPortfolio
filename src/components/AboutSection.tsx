@@ -47,7 +47,7 @@ export function AboutSection() {
             {PORTFOLIO_CONFIG.about.bioParagraphs.map((paragraph, idx) => (
               <p
                 key={idx}
-                className="p-6 rounded-2xl bg-[#070c16] border border-cyan-500/15 hover:border-cyan-400/40 hover:shadow-[0_0_20px_rgba(0,240,255,0.15)] transition-all duration-300 hud-corner"
+                className="p-6 rounded-3xl bg-white/[0.05] hover:bg-white/[0.09] border border-white/[0.14] hover:border-white/[0.28] backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25)] transition-all duration-300"
               >
                 {paragraph}
               </p>
@@ -72,10 +72,10 @@ export function AboutSection() {
             </div>
           </div>
 
-          {/* Quick Stats & Architecture Focus (Right 5 Cols) */}
+          {/* Quick Stats & Architecture Focus (Right 5 Cols - Apple Frosted Widget) */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="p-6 rounded-3xl bg-gradient-to-b from-[#090f1a] to-[#04060c] border border-cyan-500/25 shadow-xl hud-corner">
-              <div className="flex items-center gap-2 mb-4 pb-3 border-b border-cyan-500/20">
+            <div className="p-6 rounded-[28px] bg-white/[0.06] border border-white/[0.18] backdrop-blur-3xl shadow-[0_25px_60px_rgba(0,0,0,0.7),inset_0_1.2px_1.5px_rgba(255,255,255,0.35)]">
+              <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/[0.1]">
                 <Code2 className="w-4 h-4 text-cyan-400" />
                 <h3 className="text-xs font-mono uppercase tracking-wider text-cyan-300 font-semibold">
                   Engineering Stack Specifications
@@ -109,7 +109,7 @@ export function AboutSection() {
               </ul>
             </div>
 
-            <div className="p-5 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-xs shadow-inner">
+            <div className="p-5 rounded-2xl bg-white/[0.04] border border-white/[0.12] backdrop-blur-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] text-xs">
               <span className="font-mono uppercase tracking-wider text-cyan-300 block mb-1 font-semibold">
                 [ DOMAIN PRINCIPLE ]
               </span>
@@ -135,16 +135,16 @@ export function AboutSection() {
             {PORTFOLIO_CONFIG.about.corePrinciples.map((principle, index) => (
               <div
                 key={principle.title}
-                className="p-6 rounded-2xl bg-gradient-to-b from-[#090f1a] to-[#05080e] border border-cyan-500/15 hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(0,240,255,0.2)] transition-all duration-300 group flex flex-col justify-between hud-corner"
+                className="p-6 rounded-3xl bg-white/[0.05] hover:bg-white/[0.09] border border-white/[0.14] hover:border-white/[0.28] backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25)] hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 rounded-2xl bg-white/[0.06] border border-white/[0.15] flex items-center justify-center mb-4 group-hover:scale-110 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] transition-transform">
                     {iconMap[index]}
                   </div>
                   <h4 className="text-sm font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors font-mono">
                     {principle.title}
                   </h4>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-xs text-slate-300 leading-relaxed">
                     {principle.description}
                   </p>
                 </div>

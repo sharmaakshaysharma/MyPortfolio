@@ -116,9 +116,9 @@ export function ContactSection() {
               {PORTFOLIO_CONFIG.contact.subtext}
             </p>
 
-            {/* Email Copy Card */}
-            <div className="w-full max-w-md p-5 rounded-2xl bg-[#070c16] border border-cyan-500/25 shadow-lg mb-8 hud-corner">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-cyan-400 block mb-2 font-semibold">
+            {/* Email Copy Card (Apple Frosted Glass) */}
+            <div className="w-full max-w-md p-6 rounded-3xl bg-white/[0.05] border border-white/[0.15] backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25)] mb-8">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-cyan-300 block mb-2 font-semibold">
                 PRIMARY DIRECT ROUTING
               </span>
               <div className="flex items-center justify-between gap-3">
@@ -127,7 +127,7 @@ export function ContactSection() {
                 </span>
                 <button
                   onClick={handleCopyEmail}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-500/40 text-xs font-mono text-cyan-300 transition-all cursor-pointer shrink-0 active:scale-95 shadow-[0_0_10px_rgba(0,240,255,0.2)]"
+                  className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/[0.08] hover:bg-white/[0.16] border border-white/[0.2] text-xs font-mono text-cyan-300 transition-all cursor-pointer shrink-0 active:scale-95 shadow-[0_4px_15px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.3)]"
                 >
                   {copied ? (
                     <>
@@ -142,19 +142,19 @@ export function ContactSection() {
                   )}
                 </button>
               </div>
-              <div className="mt-2 text-[11px] font-mono text-slate-500 flex items-center gap-1.5">
+              <div className="mt-2 text-[11px] font-mono text-slate-400 flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 <span>{PORTFOLIO_CONFIG.contact.statusText}</span>
               </div>
             </div>
 
             {/* Social & Professional Links */}
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center gap-3">
               <a
                 href={PORTFOLIO_CONFIG.personal.socials.github}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#070c16] hover:bg-cyan-500/15 border border-cyan-500/20 hover:border-cyan-400 text-xs font-mono text-slate-300 hover:text-cyan-300 transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.05] hover:bg-white/[0.12] border border-white/[0.14] text-xs font-mono text-slate-300 hover:text-white transition-all shadow-sm"
               >
                 <GithubIcon className="w-4 h-4 text-slate-400" />
                 <span>GitHub Profile</span>
@@ -165,7 +165,7 @@ export function ContactSection() {
                 href={PORTFOLIO_CONFIG.personal.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#070c16] hover:bg-cyan-500/15 border border-cyan-500/20 hover:border-cyan-400 text-xs font-mono text-slate-300 hover:text-cyan-300 transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.05] hover:bg-white/[0.12] border border-white/[0.14] text-xs font-mono text-slate-300 hover:text-white transition-all shadow-sm"
               >
                 <LinkedinIcon className="w-4 h-4 text-cyan-400" />
                 <span>LinkedIn Profile</span>
@@ -176,7 +176,7 @@ export function ContactSection() {
 
           {/* Right Column: Interactive Quick Inquiry Draft */}
           <div className="lg:col-span-6 w-full">
-            <div className="rounded-3xl bg-gradient-to-b from-[#090f1a] to-[#04060c] border border-cyan-500/30 p-6 sm:p-8 shadow-[0_0_40px_rgba(0,240,255,0.12)] hud-corner">
+            <div className="rounded-[32px] sm:rounded-[40px] bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-white/[0.015] border border-white/[0.18] backdrop-blur-3xl p-6 sm:p-8 shadow-[0_30px_80px_rgba(0,0,0,0.85),inset_0_1.5px_2px_rgba(255,255,255,0.4)]">
               <div className="flex items-center gap-2 mb-6 pb-4 border-b border-cyan-500/20">
                 <MessageSquare className="w-4 h-4 text-cyan-400" />
                 <h3 className="text-xs font-mono uppercase tracking-wider text-cyan-300 font-semibold">
@@ -199,7 +199,7 @@ export function ContactSection() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-mono text-slate-400 mb-1.5">
+                    <label className="block text-xs font-mono text-slate-300 mb-2 font-medium">
                       Your Identity / Name
                     </label>
                     <input
@@ -208,12 +208,12 @@ export function ContactSection() {
                       value={senderName}
                       onChange={(e) => setSenderName(e.target.value)}
                       placeholder="Jane Doe"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#060a12] border border-cyan-500/20 focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(0,240,255,0.25)] focus:outline-none text-xs text-white placeholder-slate-600 font-mono transition-all"
+                      className="w-full px-4 py-3 rounded-2xl bg-white/[0.05] border border-white/[0.14] focus:border-cyan-400 focus:bg-white/[0.08] focus:shadow-[0_0_20px_rgba(0,240,255,0.3),inset_0_1px_1px_rgba(255,255,255,0.3)] focus:outline-none text-xs text-white placeholder-slate-500 font-mono transition-all backdrop-blur-xl"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono text-slate-400 mb-1.5">
+                    <label className="block text-xs font-mono text-slate-300 mb-2 font-medium">
                       Your Email Route
                     </label>
                     <input
@@ -222,19 +222,19 @@ export function ContactSection() {
                       value={senderEmail}
                       onChange={(e) => setSenderEmail(e.target.value)}
                       placeholder="jane@company.com"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#060a12] border border-cyan-500/20 focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(0,240,255,0.25)] focus:outline-none text-xs text-white placeholder-slate-600 font-mono transition-all"
+                      className="w-full px-4 py-3 rounded-2xl bg-white/[0.05] border border-white/[0.14] focus:border-cyan-400 focus:bg-white/[0.08] focus:shadow-[0_0_20px_rgba(0,240,255,0.3),inset_0_1px_1px_rgba(255,255,255,0.3)] focus:outline-none text-xs text-white placeholder-slate-500 font-mono transition-all backdrop-blur-xl"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-slate-400 mb-1.5">
+                  <label className="block text-xs font-mono text-slate-300 mb-2 font-medium">
                     Subject / Project Domain
                   </label>
                   <select
                     value={senderSubject}
                     onChange={(e) => setSenderSubject(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#060a12] border border-cyan-500/20 focus:border-cyan-400 focus:outline-none text-xs text-white font-mono"
+                    className="w-full px-4 py-3 rounded-2xl bg-[#090d18] border border-white/[0.14] focus:border-cyan-400 focus:outline-none text-xs text-white font-mono transition-all shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"
                   >
                     <option value="Software / Data Engineering Opportunity">
                       Software / Data Engineering Opportunity
@@ -252,7 +252,7 @@ export function ContactSection() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-slate-400 mb-1.5">
+                  <label className="block text-xs font-mono text-slate-300 mb-2 font-medium">
                     Message Payload
                   </label>
                   <textarea
@@ -261,14 +261,14 @@ export function ContactSection() {
                     value={senderMessage}
                     onChange={(e) => setSenderMessage(e.target.value)}
                     placeholder="Describe your technical requirements, systems problem, or role..."
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#060a12] border border-cyan-500/20 focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(0,240,255,0.25)] focus:outline-none text-xs text-white placeholder-slate-600 font-mono resize-none transition-all"
+                    className="w-full px-4 py-3 rounded-2xl bg-white/[0.05] border border-white/[0.14] focus:border-cyan-400 focus:bg-white/[0.08] focus:shadow-[0_0_20px_rgba(0,240,255,0.3),inset_0_1px_1px_rgba(255,255,255,0.3)] focus:outline-none text-xs text-white placeholder-slate-500 font-mono resize-none transition-all backdrop-blur-xl"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-400 via-emerald-400 to-cyan-400 hover:from-cyan-300 hover:to-emerald-300 disabled:opacity-60 text-slate-950 font-mono font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-[0_0_20px_rgba(0,240,255,0.35)] active:scale-98"
+                  className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-cyan-400 via-emerald-400 to-cyan-400 hover:from-cyan-300 hover:to-emerald-300 disabled:opacity-60 text-slate-950 font-mono font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-[0_10px_30px_rgba(0,240,255,0.35),inset_0_1.2px_1.5px_rgba(255,255,255,0.6)] active:scale-98"
                 >
                   {isSubmitting ? (
                     <>

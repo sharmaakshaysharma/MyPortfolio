@@ -52,7 +52,7 @@ export function LakehouseCalculator() {
   ];
 
   return (
-    <div className="relative rounded-3xl bg-gradient-to-b from-[#080d19] via-[#050811] to-[#030509] border border-cyan-500/25 p-6 sm:p-8 lg:p-10 shadow-[0_25px_70px_rgba(0,0,0,0.85)] hud-corner overflow-hidden">
+    <div className="relative rounded-[32px] sm:rounded-[40px] bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-white/[0.015] border border-white/[0.18] backdrop-blur-3xl p-6 sm:p-8 lg:p-10 shadow-[0_30px_80px_rgba(0,0,0,0.85),inset_0_1.5px_2px_rgba(255,255,255,0.4)] overflow-hidden">
       {/* Laser Flare Accent */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 

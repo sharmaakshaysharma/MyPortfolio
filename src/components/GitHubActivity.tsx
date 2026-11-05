@@ -108,7 +108,7 @@ export function GitHubActivity() {
                     href={repo.htmlUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-5 rounded-2xl bg-gradient-to-b from-[#111522] to-[#0c0e15] border border-white/[0.08] hover:border-cyan-500/40 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group shadow-lg"
+                    className="p-6 rounded-3xl bg-white/[0.05] hover:bg-white/[0.09] border border-white/[0.14] hover:border-white/[0.28] backdrop-blur-2xl shadow-[0_15px_35px_rgba(0,0,0,0.6),inset_0_1px_1px_rgba(255,255,255,0.25)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
                   >
                     <div>
                       <div className="flex items-start justify-between gap-2 mb-2">
@@ -166,8 +166,8 @@ export function GitHubActivity() {
             )}
           </div>
 
-          {/* Recent Commits Activity Feed (4 Columns) */}
-          <div className="lg:col-span-4 p-6 rounded-3xl bg-gradient-to-b from-[#111520] to-[#0c0e15] border border-white/[0.08] shadow-xl">
+          {/* Recent Commits Activity Feed (4 Columns - Apple Glass Card) */}
+          <div className="lg:col-span-4 p-6 rounded-[28px] bg-white/[0.06] border border-white/[0.18] backdrop-blur-3xl shadow-[0_25px_60px_rgba(0,0,0,0.7),inset_0_1.2px_1.5px_rgba(255,255,255,0.35)]">
             <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/[0.06]">
               <GitCommit className="w-4 h-4 text-emerald-400" />
               <h3 className="text-xs font-mono uppercase tracking-wider text-slate-300">
