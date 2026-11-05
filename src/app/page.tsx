@@ -1,69 +1,144 @@
-import Image from "next/image";
+"use client";
+
+import React, { useState, useEffect } from "react";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { AboutSection } from "@/components/AboutSection";
+import { TechnicalExpertise } from "@/components/TechnicalExpertise";
+import { FeaturedProjects } from "@/components/FeaturedProjects";
+import { ArchitectureShowcase } from "@/components/ArchitectureShowcase";
+import { PipelineDAGVisualizer } from "@/components/PipelineDAGVisualizer";
+import { LakehouseCalculator } from "@/components/LakehouseCalculator";
+import { GitHubActivity } from "@/components/GitHubActivity";
+import { ExperienceJourney } from "@/components/ExperienceJourney";
+import { BeyondCoding } from "@/components/BeyondCoding";
+import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
+import { CommandPalette } from "@/components/CommandPalette";
+import { InteractiveTerminal } from "@/components/InteractiveTerminal";
+import { ResumeModal } from "@/components/ResumeModal";
+import { SystemHealthBar } from "@/components/SystemHealthBar";
 
 export default function Home() {
+  const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
+  const [terminalOpen, setTerminalOpen] = useState(false);
+  const [resumeModalOpen, setResumeModalOpen] = useState(false);
+  const [selectedArchitectureId, setSelectedArchitectureId] = useState<string>("healthcare-pipeline");
+
+  // Global keydown listeners for quick access
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Backtick or Ctrl+` opens terminal
+      if (e.key === "`" && !["INPUT", "TEXTAREA"].includes((e.target as HTMLElement)?.tagName)) {
+        e.preventDefault();
+        setTerminalOpen((prev) => !prev);
+      }
+      // Ctrl+K or Cmd+K
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setTerminalOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  const handleNavigateToArchitecture = (diagramId: string) => {
+    setSelectedArchitectureId(diagramId);
+    const element = document.getElementById("architecture");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main className="min-h-screen bg-[#030508] text-[#f1f5f9] relative selection:bg-cyan-500/30 selection:text-white">
+      {/* Scroll Progress Indicator */}
+      <ScrollProgress />
+
+      {/* DevOps Cluster Health & Status Pill */}
+      <div className="pt-0">
+        <SystemHealthBar
+          onOpenTerminal={() => setTerminalOpen(true)}
+          onOpenResume={() => setResumeModalOpen(true)}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+
+      {/* Navigation Bar */}
+      <Navbar
+        onOpenCommandPalette={() => setCommandPaletteOpen(true)}
+        onOpenTerminal={() => setTerminalOpen(true)}
+        onOpenResume={() => setResumeModalOpen(true)}
+      />
+
+      {/* Futuristic Cockpit Hero Section with Particle Nebula & Live Typewriter */}
+      <Hero
+        onOpenResume={() => setResumeModalOpen(true)}
+        onOpenTerminal={() => setTerminalOpen(true)}
+      />
+
+      {/* About Section */}
+      <AboutSection />
+
+      {/* Technical Expertise & Tooling Matrix */}
+      <TechnicalExpertise />
+
+      {/* Featured Projects (Editorial Case Studies) */}
+      <FeaturedProjects
+        onNavigateToArchitecture={handleNavigateToArchitecture}
+      />
+
+      {/* System Design & Architecture Showcase */}
+      <ArchitectureShowcase activeDiagramId={selectedArchitectureId} />
+
+      {/* Interactive DAG ETL Pipeline Simulation & Code Inspector */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+        <PipelineDAGVisualizer />
+      </section>
+
+      {/* AWS Lakehouse Cost & Latency Benchmark Engine */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+        <LakehouseCalculator />
+      </section>
+
+      {/* Automated GitHub Open Source & Commits Activity */}
+      <GitHubActivity />
+
+      {/* Experience & Journey */}
+      <ExperienceJourney />
+
+      {/* Beyond Routine Coding */}
+      <BeyondCoding />
+
+      {/* Functional SMTP Contact Gateway */}
+      <ContactSection />
+
+      {/* Footer */}
+      <Footer />
+
+      {/* Interactive Hacker CLI / Terminal Modal */}
+      <InteractiveTerminal
+        isOpen={terminalOpen}
+        onClose={() => setTerminalOpen(false)}
+        onOpenResumeModal={() => {
+          setTerminalOpen(false);
+          setResumeModalOpen(true);
+        }}
+      />
+
+      {/* Instant Resume Quick-Preview & ATS Markdown Copy Modal */}
+      <ResumeModal
+        isOpen={resumeModalOpen}
+        onClose={() => setResumeModalOpen(false)}
+      />
+
+      {/* Command Palette (Search) */}
+      <CommandPalette
+        isOpen={commandPaletteOpen}
+        onClose={() => setCommandPaletteOpen(false)}
+        onSelectArchitecture={handleNavigateToArchitecture}
+      />
+    </main>
   );
 }
